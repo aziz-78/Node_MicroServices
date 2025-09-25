@@ -1,10 +1,23 @@
-# Node_MicroServices
-this is a repo which demonstrates microservices in node.js using ts 
+# Node Microservices
 
-goal is to
--use kafka as broker
--using prisma
--create various microservices that inter communicate
--using test driven development
+This repository demonstrates building microservices in **Node.js** with **TypeScript**.
 
+## Goals
 
+- Use **Kafka** as the message broker  
+- Use **Prisma** for database access  
+- Create various microservices that inter-communicate  
+- Apply **Test-Driven Development (TDD)** throughout
+
+## Services
+
+- [Catalog Service](./catalog_service/)  
+- (Add more services as you build them)
+
+## Tech Stack
+
+- Node.js  
+- TypeScript  
+- Kafka  
+- Prisma  
+- Jest (for TDD)
