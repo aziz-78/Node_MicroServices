@@ -26,4 +26,6 @@ export class UpdateProductRequest{
 
     @Min(1)
     price?:number
+
+    stock?:number;
 }

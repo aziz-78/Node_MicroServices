@@ -29,7 +29,7 @@ router.post('/product',async (req: Request, res: Response, next: NextFunction) =
     }
   }
 );
-router.post('/product/:id',async (req: Request, res: Response, next: NextFunction) => {
+router.patch('/product/:id',async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { errors, input } = await RequestValidator(
         UpdateProductRequest,
@@ -48,6 +48,19 @@ router.post('/product/:id',async (req: Request, res: Response, next: NextFunctio
   }
 );
 
-
+router.get(
+  "/product",
+  async (req: Request, res: Response, next: NextFunction) => {
+    const limit = Number(req.query["limit"]);
+    const offset = Number(req.query["offset"]);
+    try {
+      const data = await catalogService.getProducts(limit, offset);
+      return res.status(200).json(data);
+    } catch (error) {
+      const err = error as Error;
+      return res.status(500).json(err.message);
+    }
+  }
+);
 
 export default router
